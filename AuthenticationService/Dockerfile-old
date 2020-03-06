@@ -1,0 +1,6 @@
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+
+COPY AuthenticationService.WebAPI/bin/Release/netcoreapp3.1/publish/ app/
+COPY AuthenticationService.WebAPI/bin/Release/netcoreapp3.1/publish/appsettings.json /appsettings.json
+
+ENTRYPOINT ["dotnet", "app/AuthenticationService.WebAPI.dll"]
